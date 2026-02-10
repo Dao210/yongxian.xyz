@@ -5,18 +5,18 @@ import { MessageSquare, FileText, Calendar, Users } from "lucide-react"
 
 const digitalEmployees = [
   {
-    title: "客服助理",
-    description: "全天候处理客户咨询，提供个性化回复和高效解决问题。",
+    title: "营销助手",
+    description: "智能营销活动策划与执行，自动化广告投放优化，数据分析驱动增长决策，提升营销ROI。",
     icon: MessageSquare,
-    image: "/images/customer-service.webp",
-    link: "/solutions/customer-service",
+    image: "/营销助手20260203.webp",
+    link: "https://52tuan.com/marketing",
   },
   {
-    title: "文档处理员",
-    description: "自动化文档处理、数据提取和组织，节省时间并减少错误。",
+    title: "法务助手",
+    description: "合同审核与合规审查智能自动化，NDA分级风险评估，法律咨询标准化回复，提升法务效率。",
     icon: FileText,
-    image: "/images/solutions/document-processor.jpg",
-    link: "/solutions/document-processor",
+    image: "/法务助手20260209.webp",
+    link: "https://52tuan.com/legal",
   },
   {
     title: "日程安排助理",
@@ -68,11 +68,19 @@ export function FeaturedEmployeesSection() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{employee.title}</h3>
                 <p className="text-muted-foreground mb-4 flex-1">{employee.description}</p>
-                <Link href={employee.link}>
-                  <Button variant="outline" className="w-full bg-transparent">
-                    了解更多
-                  </Button>
-                </Link>
+                {employee.link.startsWith('http') ? (
+                  <a href={employee.link} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="w-full bg-transparent">
+                      了解更多
+                    </Button>
+                  </a>
+                ) : (
+                  <Link href={employee.link}>
+                    <Button variant="outline" className="w-full bg-transparent">
+                      了解更多
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           ))}
