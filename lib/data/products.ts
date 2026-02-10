@@ -1,0 +1,68 @@
+import type { Product } from "@/lib/types"
+
+export const products: Product[] = [
+  {
+    id: 1,
+    image: "/images/products/product-1.jpg",
+    likes: 7,
+    description: "A golden dog charm pendant with detailed features",
+    price: 129.99,
+    category: "jewelry",
+  },
+  {
+    id: 2,
+    image: "/images/products/product-2.jpg",
+    likes: 7,
+    description: "A dainty gold ring with a twisted 1.5mm band. Gently curved design for a comfortable fit.",
+    price: 89.99,
+    category: "jewelry",
+  },
+  {
+    id: 3,
+    image: "/images/products/product-3.jpg",
+    likes: 14,
+    description: "Geometric pattern textile wall hanging in earthy tones. Handcrafted with natural fibers.",
+    price: 149.99,
+    category: "home-decor",
+  },
+  {
+    id: 4,
+    image: "/images/products/product-4.jpg",
+    likes: 23,
+    description: "Gold disc earrings with subtle floral pattern. Lightweight and perfect for everyday wear.",
+    price: 79.99,
+    category: "jewelry",
+  },
+  {
+    id: 5,
+    image: "/images/products/product-5.jpg",
+    likes: 4,
+    description: "Gold vermeil shield-shaped signet ring with engraved letters. Customizable with your initials.",
+    price: 119.99,
+    category: "jewelry",
+  },
+  {
+    id: 6,
+    image: "/images/products/product-6.jpg",
+    likes: 12,
+    description: "Handcrafted ceramic vase with unique glaze pattern. Each piece is one-of-a-kind.",
+    price: 69.99,
+    category: "home-decor",
+  },
+  {
+    id: 7,
+    image: "/images/products/product-7.jpg",
+    likes: 9,
+    description: "Abstract wall art printed on premium canvas. Bold colors and modern design.",
+    price: 199.99,
+    category: "art",
+  },
+  {
+    id: 8,
+    image: "/images/products/product-8.jpg",
+    likes: 18,
+    description: "Minimalist silver bracelet with adjustable chain. Delicate and elegant design.",
+    price: 59.99,
+    category: "jewelry",
+  },
+]

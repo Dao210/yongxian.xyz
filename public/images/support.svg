@@ -1,0 +1,112 @@
+<svg width="100%" height="100%" viewBox="0 0 960 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle tech pattern -->
+  <rect width="960" height="400" fill="#f8f9fa"/>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#3B82F6" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="960" height="400" fill="url(#grid)"/>
+  
+  <!-- Central AI core -->
+  <circle cx="450" cy="200" r="80" fill="#3B82F6" opacity="0.1"/>
+  <rect x="420" y="160" width="60" height="90" rx="8" stroke="#3B82F6" stroke-width="3" fill="none"/>
+  <circle cx="450" cy="140" r="20" stroke="#3B82F6" stroke-width="3" fill="none"/>
+  
+  <!-- Circuit board pattern inside AI -->
+  <path d="M430 180 L440 180 L440 190 L450 190 L450 200 M435 210 L445 210 L445 200 L455 200" 
+        stroke="#3B82F6" stroke-width="1.5" fill="none"/>
+  <circle cx="440" cy="180" r="2" fill="#3B82F6"/>
+  <circle cx="440" cy="190" r="2" fill="#3B82F6"/>
+  <circle cx="450" cy="190" r="2" fill="#3B82F6"/>
+  <circle cx="450" cy="200" r="2" fill="#3B82F6"/>
+  <circle cx="445" cy="210" r="2" fill="#3B82F6"/>
+  <circle cx="445" cy="200" r="2" fill="#3B82F6"/>
+  <circle cx="455" cy="200" r="2" fill="#3B82F6"/>
+  
+  <!-- Upgrade cycles - circular arrows -->
+  <g transform="translate(450, 200)">
+    <!-- Outer upgrade cycle -->
+    <circle cx="0" cy="0" r="130" stroke="#3B82F6" stroke-width="2" stroke-dasharray="15,5" fill="none"/>
+    <path d="M-90 -95 L-100 -80 L-80 -75" fill="none" stroke="#3B82F6" stroke-width="3"/>
+    
+    <!-- Middle upgrade cycle -->
+    <circle cx="0" cy="0" r="110" stroke="#3B82F6" stroke-width="2" stroke-dasharray="10,5" fill="none"/>
+    <path d="M80 75 L95 85 L90 65" fill="none" stroke="#3B82F6" stroke-width="3"/>
+    
+    <!-- Inner upgrade cycle -->
+    <circle cx="0" cy="0" r="90" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+    <path d="M-65 55 L-75 70 L-55 70" fill="none" stroke="#3B82F6" stroke-width="3"/>
+  </g>
+  
+  <!-- Version labels -->
+  <g transform="translate(450, 200)">
+    <rect x="110" y="-10" width="40" height="20" rx="4" fill="#3B82F6" opacity="0.8"/>
+    <text x="130" y="5" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">v3.0</text>
+    
+    <rect x="-150" y="-10" width="40" height="20" rx="4" fill="#3B82F6" opacity="0.8"/>
+    <text x="-130" y="5" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">v1.0</text>
+    
+    <rect x="-10" y="-130" width="40" height="20" rx="4" fill="#3B82F6" opacity="0.8"/>
+    <text x="10" y="-115" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">v2.0</text>
+  </g>
+  
+  <!-- Data nodes -->
+  <g transform="translate(450, 200)">
+    <!-- Data node 1 -->
+    <circle cx="-90" cy="-40" r="15" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="-90" y="-36" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="10">DATA</text>
+    
+    <!-- Data node 2 -->
+    <circle cx="70" cy="-60" r="15" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="70" y="-56" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="10">API</text>
+    
+    <!-- Data node 3 -->
+    <circle cx="40" cy="80" r="15" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="40" y="84" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="10">ML</text>
+    
+    <!-- Data node 4 -->
+    <circle cx="-60" cy="60" r="15" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="-60" y="64" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="10">UI</text>
+  </g>
+  
+  <!-- Connection lines to data nodes -->
+  <path d="M420 180 L360 160" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <path d="M480 170 L520 140" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <path d="M470 230 L490 280" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <path d="M420 220 L390 260" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+  
+  <!-- Improvement metrics -->
+  <g transform="translate(450, 200)">
+    <!-- Performance -->
+    <line x1="-170" y1="-70" x2="-120" y2="-70" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="-170" y1="-50" x2="-100" y2="-50" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="-170" y1="-30" x2="-80" y2="-30" stroke="#3B82F6" stroke-width="2"/>
+    <text x="-175" y="-50" text-anchor="end" fill="#3B82F6" font-family="Arial" font-size="12">性能</text>
+    
+    <!-- Accuracy -->
+    <line x1="120" y1="-70" x2="170" y2="-70" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="100" y1="-50" x2="170" y2="-50" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="80" y1="-30" x2="170" y2="-30" stroke="#3B82F6" stroke-width="2"/>
+    <text x="175" y="-50" text-anchor="start" fill="#3B82F6" font-family="Arial" font-size="12">准确度</text>
+    
+    <!-- Features -->
+    <line x1="-170" y1="30" x2="-120" y2="30" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="-170" y1="50" x2="-100" y2="50" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="-170" y1="70" x2="-80" y2="70" stroke="#3B82F6" stroke-width="2"/>
+    <text x="-175" y="50" text-anchor="end" fill="#3B82F6" font-family="Arial" font-size="12">功能</text>
+    
+    <!-- Efficiency -->
+    <line x1="120" y1="30" x2="170" y2="30" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="100" y1="50" x2="170" y2="50" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="80" y1="70" x2="170" y2="70" stroke="#3B82F6" stroke-width="2"/>
+    <text x="175" y="50" text-anchor="start" fill="#3B82F6" font-family="Arial" font-size="12">效率</text>
+  </g>
+  
+  <!-- Pulse animation effect (static representation) -->
+  <circle cx="450" cy="200" r="150" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.1"/>
+  <circle cx="450" cy="200" r="120" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.15"/>
+  <circle cx="450" cy="200" r="100" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.2"/>
+  
+  <!-- Title -->
+  <text x="450" y="370" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="20" font-weight="bold">持续升级与优化</text>
+  <text x="450" y="395" text-anchor="middle" fill="#3B82F6" font-family="Arial" font-size="14">性能提升 · 功能扩展 · 持续学习</text>
+</svg>

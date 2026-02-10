@@ -1,0 +1,72 @@
+<svg width="100%" height="100%" viewBox="0 0 960 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle tech pattern -->
+  <rect width="960" height="400" fill="#f8f9fa"/>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#3B82F6" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="960" height="400" fill="url(#grid)"/>
+  
+  <!-- Left side: Human silhouette -->
+  <circle cx="250" cy="200" r="70" fill="#3B82F6" opacity="0.1"/>
+  <path d="M250 130 L250 270 M220 170 L280 170 M220 230 L280 230" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Right side: AI representation -->
+  <circle cx="650" cy="200" r="70" fill="#3B82F6" opacity="0.1"/>
+  <rect x="625" y="160" width="50" height="80" rx="8" stroke="#3B82F6" stroke-width="3" fill="none"/>
+  <circle cx="650" cy="145" r="15" stroke="#3B82F6" stroke-width="3" fill="none"/>
+  
+  <!-- Circuit board pattern inside AI -->
+  <path d="M630 180 L645 180 L645 195 L660 195 L660 210 M640 220 L650 220 L650 205 L670 205" 
+        stroke="#3B82F6" stroke-width="1.5" fill="none"/>
+  <circle cx="645" cy="180" r="2" fill="#3B82F6"/>
+  <circle cx="645" cy="195" r="2" fill="#3B82F6"/>
+  <circle cx="660" cy="195" r="2" fill="#3B82F6"/>
+  <circle cx="660" cy="210" r="2" fill="#3B82F6"/>
+  <circle cx="650" cy="220" r="2" fill="#3B82F6"/>
+  <circle cx="650" cy="205" r="2" fill="#3B82F6"/>
+  <circle cx="670" cy="205" r="2" fill="#3B82F6"/>
+  
+  <!-- Center: Data exchange visualization -->
+  <path d="M320 200 L580 200" stroke="#3B82F6" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Data particles -->
+  <circle cx="350" cy="200" r="5" fill="#3B82F6" opacity="0.8"/>
+  <circle cx="400" cy="200" r="3" fill="#3B82F6" opacity="0.6"/>
+  <circle cx="450" cy="200" r="6" fill="#3B82F6" opacity="0.9"/>
+  <circle cx="500" cy="200" r="4" fill="#3B82F6" opacity="0.7"/>
+  <circle cx="550" cy="200" r="5" fill="#3B82F6" opacity="0.8"/>
+  
+  <!-- Speech/thought bubbles -->
+  <path d="M320 160 C380 140, 450 140, 510 160" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  <path d="M510 240 C450 260, 380 260, 320 240" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  
+  <!-- Binary/data visualization -->
+  <text x="380" y="155" font-family="monospace" font-size="10" fill="#3B82F6">10110</text>
+  <text x="420" y="145" font-family="monospace" font-size="10" fill="#3B82F6">01001</text>
+  <text x="460" y="155" font-family="monospace" font-size="10" fill="#3B82F6">11010</text>
+  
+  <text x="380" y="255" font-family="monospace" font-size="10" fill="#3B82F6">01101</text>
+  <text x="420" y="265" font-family="monospace" font-size="10" fill="#3B82F6">10010</text>
+  <text x="460" y="255" font-family="monospace" font-size="10" fill="#3B82F6">01100</text>
+  
+  <!-- Floating tech elements -->
+  <rect x="200" y="120" width="30" height="20" rx="4" stroke="#3B82F6" stroke-width="1.5" fill="none"/>
+  <rect x="670" y="120" width="30" height="20" rx="4" stroke="#3B82F6" stroke-width="1.5" fill="none"/>
+  <rect x="200" y="260" width="30" height="20" rx="4" stroke="#3B82F6" stroke-width="1.5" fill="none"/>
+  <rect x="670" y="260" width="30" height="20" rx="4" stroke="#3B82F6" stroke-width="1.5" fill="none"/>
+  
+  <!-- Connection lines to floating elements -->
+  <path d="M215 140 L215 170" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3,2"/>
+  <path d="M685 140 L685 170" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3,2"/>
+  <path d="M215 230 L215 260" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3,2"/>
+  <path d="M685 230 L685 260" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3,2"/>
+  
+  <!-- Pulse animation effect (static representation) -->
+  <circle cx="450" cy="200" r="100" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.2"/>
+  <circle cx="450" cy="200" r="80" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.3"/>
+  <circle cx="450" cy="200" r="60" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.4"/>
+  
+  <!-- Title -->
+  <text x="450" y="350" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="20" font-weight="bold">AI 业务需求咨询</text>
+  <text x="450" y="375" text-anchor="middle" fill="#3B82F6" font-family="Arial" font-size="14">智能分析 · 定制方案 · 数字化转型</text>
+</svg>
