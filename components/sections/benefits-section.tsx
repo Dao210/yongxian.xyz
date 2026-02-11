@@ -1,3 +1,6 @@
+"use client"
+
+import { useRef, useEffect, useState } from "react"
 import { Zap, TrendingUp, Clock, Shield } from "lucide-react"
 
 const benefits = [
@@ -24,24 +27,94 @@ const benefits = [
 ]
 
 export function BenefitsSection() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="bg-muted/30 py-20">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">企业收益</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            我们的AI工作台帮助中小企业以更少的资源实现更多目标
+    <section
+      ref={sectionRef}
+      className="relative py-24 bg-background overflow-hidden"
+    >
+      {/* Dot pattern background */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
+      </div>
+
+      <div className="container relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+            }`}
+          >
+            <span className="text-2xl">⚡</span>
+            <span className="text-primary text-sm font-medium">核心优势</span>
+          </div>
+          <h2
+            className={`font-['ZCOOL_XiaoWei'] text-3xl sm:text-4xl md:text-5xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            为何选择 AI 工作台
+          </h2>
+          <p
+            className={`text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-1000 delay-400 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            我们的 AI 工作台帮助中小企业以更少的资源实现更多目标
           </p>
         </div>
 
+        {/* Cards */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-background rounded-lg p-6 shadow-sm border transition-all hover:shadow-md">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <benefit.icon className="h-6 w-6" />
+            <div
+              key={index}
+              className={`group relative bg-background/90 backdrop-blur-sm rounded-2xl p-8 border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
+              style={{ transitionDelay: `${600 + index * 150}ms` }}
+            >
+              {/* Icon */}
+              <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-cyan-500/10 text-primary shadow-sm">
+                <benefit.icon className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-muted-foreground">{benefit.description}</p>
+
+              {/* Content */}
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+              </div>
+
+              {/* Gradient number */}
+              <div className="mt-6 text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 opacity-10">
+                {String(index + 1).padStart(2, "0")}
+              </div>
             </div>
           ))}
         </div>

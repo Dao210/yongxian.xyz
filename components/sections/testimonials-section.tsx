@@ -1,4 +1,8 @@
+"use client"
+
+import { useRef, useEffect, useState } from "react"
 import { Quote } from "lucide-react"
+import Image from "next/image"
 
 const testimonials = [
   {
@@ -25,33 +29,92 @@ const testimonials = [
 ]
 
 export function TestimonialsSection() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="py-20">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">客户评价</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            听听那些通过我们的AI工作台改变运营方式的企业怎么说
+    <section
+      ref={sectionRef}
+      className="relative py-24 bg-background overflow-hidden"
+    >
+      {/* Radial gradient background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.03),transparent_70%)]" />
+      </div>
+
+      <div className="container relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+            }`}
+          >
+            <span className="text-2xl">💬</span>
+            <span className="text-primary text-sm font-medium">客户评价</span>
+          </div>
+          <h2
+            className={`font-['ZCOOL_XiaoWei'] text-3xl sm:text-4xl md:text-5xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            客户反馈
+          </h2>
+          <p
+            className={`text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-1000 delay-400 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            听听那些通过我们的 AI 工作台改变运营方式的企业怎么说
           </p>
         </div>
 
+        {/* Cards */}
         <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-background rounded-lg p-6 shadow-sm border transition-all hover:shadow-md flex flex-col"
+              className={`group relative bg-muted/30 rounded-2xl p-8 border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
+              style={{ transitionDelay: `${600 + index * 150}ms` }}
             >
-              <div className="mb-4 text-primary">
+              {/* Quote Icon */}
+              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/10 to-cyan-500/10 text-primary shadow-sm">
                 <Quote className="h-8 w-8" />
               </div>
-              <p className="text-foreground mb-6 flex-1 italic">"{testimonial.quote}"</p>
-              <div className="flex items-center gap-4">
-                
-                <div>
-                  <h4 className="font-semibold">{testimonial.author}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.position}，{testimonial.company}
-                  </p>
+
+              {/* Content */}
+              <div className="space-y-4">
+                <p className="text-foreground mb-6 flex-1 italic leading-relaxed">
+                  "{testimonial.quote}"
+                </p>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4">
+                  <div className="text-center">
+                    <h4 className="font-semibold text-foreground mb-1">{testimonial.author}</h4>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.position}，{testimonial.company}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
