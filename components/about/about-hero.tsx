@@ -6,11 +6,11 @@ export function AboutHero() {
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-            助力传统行业<span className="text-primary">数字化转型</span>
+            助力企业<span className="text-primary">AI升级</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            我们来自互联网大厂的团队，致力于将先进AI技术带入传统行业，
-            通过定制AI工作台帮助企业提升效率、降低成本并实现数字化转型。
+            我们曾是互联网的老兵，现在是AI工作台先行者，
+            通过定制AI工作台帮助企业提升效率、降低成本、完成企业范式转换。
           </p>
         </div>
       </div>

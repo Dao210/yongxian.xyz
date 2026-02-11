@@ -8,7 +8,7 @@ export function JoinUs() {
         <div className="bg-primary/10 rounded-lg p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">加入我们的使命</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            我们正在寻找志同道合的伙伴，一起帮助传统行业实现数字化转型。
+            我们正在寻找志同道合的伙伴，一起帮助企业完成AI升级。
             如果你热爱技术，渴望创造影响力，欢迎加入涌现科技团队。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
