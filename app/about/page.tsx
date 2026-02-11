@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-slate-950">
+    <main>
       <AboutHero />
       <OurManifesto />
       <OurTeam />

@@ -11,8 +11,8 @@ const beliefs = [
   },
   {
     number: "02",
-    title: "工作台是未来",
-    description: "聊天机器人只是过渡，AI 工作台才是终局。当 AI 成为你工作环境的一部分，真正的范式转移才会发生。",
+    title: "思考在云端，执行在本地",
+    description: "AI 工作台是全链路的系统化解决方案。云端的大模型负责理解和规划，本地的工具链负责执行和落地，两者无缝协作。",
     icon: "🖥️",
   },
   {
@@ -47,32 +47,32 @@ export function OurManifesto() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+      className="relative py-24 bg-background"
     >
-      {/* Background */}
+      {/* Subtle background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.1),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.03),transparent_70%)]" />
       </div>
 
       <div className="container relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <span
-            className={`inline-block text-6xl md:text-7xl mb-6 transition-all duration-1000 ${
+            className={`inline-block text-5xl md:text-6xl mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
             }`}
           >
             ✦
           </span>
           <h2
-            className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl text-white mb-6 transition-all duration-1000 delay-200 ${
+            className={`font-['ZCOOL_XiaoWei'] text-3xl sm:text-4xl md:text-5xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             我们的信仰
           </h2>
           <p
-            className={`text-xl text-slate-400 max-w-2xl mx-auto transition-all duration-1000 delay-400 ${
+            className={`text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-1000 delay-400 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -91,10 +91,10 @@ export function OurManifesto() {
               style={{ transitionDelay: `${600 + index * 200}ms` }}
             >
               {/* Card */}
-              <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 md:p-10 hover:border-primary/30 transition-colors">
+              <div className="relative bg-muted/30 rounded-2xl p-8 md:p-10 hover:bg-muted/50 transition-colors border border-transparent hover:border-primary/10">
                 {/* Number */}
                 <div
-                  className="absolute -top-4 -left-4 text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary/20 to-purple-500/20 select-none"
+                  className="absolute -top-3 -left-3 text-5xl md:text-6xl font-bold text-primary/5 select-none"
                 >
                   {belief.number}
                 </div>
@@ -102,17 +102,17 @@ export function OurManifesto() {
                 <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center text-4xl">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-3xl">
                       {belief.icon}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
                       {belief.title}
                     </h3>
-                    <p className="text-lg text-slate-400 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {belief.description}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export function OurManifesto() {
               {/* Connector line */}
               {index < beliefs.length - 1 && (
                 <div className="flex justify-center">
-                  <div className="w-px h-8 bg-gradient-to-b from-primary/30 to-transparent my-4" />
+                  <div className="w-px h-6 bg-gradient-to-b from-primary/20 to-transparent my-3" />
                 </div>
               )}
             </div>
@@ -131,14 +131,14 @@ export function OurManifesto() {
 
         {/* Bottom quote */}
         <div
-          className={`mt-20 text-center transition-all duration-1000 delay-1400 ${
+          className={`mt-16 text-center transition-all duration-1000 delay-1400 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <blockquote className="font-['ZCOOL_XiaoWei'] text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <blockquote className="font-['ZCOOL_XiaoWei'] text-xl md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed">
             "我们不预测未来，我们亲手构建它。"
           </blockquote>
-          <p className="text-slate-500 mt-4">— 涌现宣言</p>
+          <p className="text-muted-foreground mt-4">— 涌现宣言</p>
         </div>
       </div>
     </section>

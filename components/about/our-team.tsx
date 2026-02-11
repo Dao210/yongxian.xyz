@@ -10,12 +10,6 @@ const skills = [
   { name: "全栈开发", level: 85, color: "from-pink-400 to-rose-500" },
 ]
 
-const experiences = [
-  { company: "阿里巴巴", role: "AI 平台架构", period: "深耕大型 AI 系统建设" },
-  { company: "蚂蚁金服", role: "智能业务落地", period: "金融场景 AI 应用实践" },
-  { company: "独立探索", role: "一人公司实验", period: "验证 AI 工具链的无限可能" },
-]
-
 const beliefs = [
   {
     icon: "🎯",
@@ -58,43 +52,27 @@ export function OurTeam() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+      className="relative py-24 bg-muted/30"
     >
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(6,182,212,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_80%,rgba(139,92,246,0.15),transparent_50%)]" />
-      </div>
-
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px),
-                           linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="container relative z-10">
+      <div className="container">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <span className="text-2xl">👤</span>
             <span className="text-primary font-medium">超级个体</span>
           </div>
-          <h2 className="font-['ZCOOL_XiaoWei'] text-5xl sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-purple-400 mb-6">
+          <h2 className="font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl text-foreground mb-6">
             创始人
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             一个人，加上 AI 工具链
             <br />
-            <span className="text-white/90">就是一个团队的力量</span>
+            <span className="text-foreground font-semibold">就是一个团队的力量</span>
           </p>
         </div>
 
         {/* Main content */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left: Avatar & Info */}
             <div
@@ -105,13 +83,13 @@ export function OurTeam() {
               {/* Avatar card */}
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
+                <div className="relative bg-background rounded-2xl p-8 shadow-lg border">
                   <div className="flex items-start gap-6">
                     {/* Avatar placeholder with artistic design */}
-                    <div className="relative w-32 h-32 flex-shrink-0">
+                    <div className="relative w-28 h-28 flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full animate-spin-slow opacity-20" />
-                      <div className="absolute inset-2 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex items-center justify-center">
-                        <span className="text-6xl">🧑‍💻</span>
+                      <div className="absolute inset-2 bg-gradient-to-br from-muted to-muted-foreground/10 rounded-full flex items-center justify-center">
+                        <span className="text-5xl">🧑‍💻</span>
                       </div>
                       {/* Orbiting dots */}
                       <div className="absolute inset-0 animate-spin-slow">
@@ -121,9 +99,9 @@ export function OurTeam() {
                     </div>
 
                     <div className="flex-1">
-                      <h3 className="text-3xl font-bold text-white mb-1">纯钧</h3>
+                      <h3 className="text-2xl font-bold text-foreground mb-1">纯钧</h3>
                       <p className="text-primary font-medium mb-3">创始人 & AI 工作台架构师</p>
-                      <p className="text-slate-400 leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed">
                         10年 AI 系统开发经验，从互联网大厂到独立探索。
                         2022年 ChatGPT 发布后，All in AI，
                         深信 AI 工作台是未来的工作方式。
@@ -138,26 +116,26 @@ export function OurTeam() {
                 {beliefs.map((belief, index) => (
                   <div
                     key={index}
-                    className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-5 hover:border-primary/50 transition-colors"
+                    className="bg-background rounded-xl p-5 shadow-sm border hover:border-primary/50 transition-colors"
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <span className="text-3xl mb-2 block">{belief.icon}</span>
-                    <h4 className="text-white font-semibold mb-1">{belief.title}</h4>
-                    <p className="text-sm text-slate-500">{belief.desc}</p>
+                    <h4 className="text-foreground font-semibold mb-1">{belief.title}</h4>
+                    <p className="text-sm text-muted-foreground">{belief.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right: Skills & Experience */}
+            {/* Right: Skills */}
             <div
               className={`space-y-8 transition-all duration-1000 delay-300 ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
               }`}
             >
               {/* Skills */}
-              <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
-                <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <div className="bg-background rounded-2xl p-8 shadow-sm border">
+                <h4 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
                   <span>⚡</span>
                   <span>核心能力</span>
                 </h4>
@@ -165,10 +143,10 @@ export function OurTeam() {
                   {skills.map((skill, index) => (
                     <div key={index} className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-white font-medium">{skill.name}</span>
-                        <span className="text-slate-500 text-sm">{skill.level}%</span>
+                        <span className="text-foreground font-medium">{skill.name}</span>
+                        <span className="text-muted-foreground text-sm">{skill.level}%</span>
                       </div>
-                      <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-2 bg-muted rounded-full overflow-hidden">
                         <div
                           className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out ${
                             isVisible ? "w-full" : "w-0"
@@ -181,30 +159,9 @@ export function OurTeam() {
                 </div>
               </div>
 
-              {/* Experience timeline */}
-              <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
-                <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <span>🛤️</span>
-                  <span>成长轨迹</span>
-                </h4>
-                <div className="space-y-4">
-                  {experiences.map((exp, index) => (
-                    <div
-                      key={index}
-                      className="relative pl-6 pb-6 border-l-2 border-slate-800 last:pb-0 last:border-0"
-                    >
-                      <div className="absolute left-0 top-0 -translate-x-1/2 w-3 h-3 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500" />
-                      <h5 className="text-white font-semibold">{exp.company}</h5>
-                      <p className="text-primary text-sm">{exp.role}</p>
-                      <p className="text-slate-500 text-sm mt-1">{exp.period}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* CTA */}
               <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border border-primary/20 rounded-2xl p-6 text-center">
-                <p className="text-slate-300 mb-2">想要一起探索 AI 工作台的无限可能？</p>
+                <p className="text-muted-foreground mb-2">想要一起探索 AI 工作台的无限可能？</p>
                 <a
                   href="mailto:hello@yongxian.xyz"
                   className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
@@ -218,11 +175,11 @@ export function OurTeam() {
         </div>
 
         {/* Bottom message */}
-        <div className="text-center mt-20 space-y-4">
-          <p className="font-['ZCOOL_XiaoWei'] text-2xl text-white/90">
+        <div className="text-center mt-16 space-y-4">
+          <p className="font-['ZCOOL_XiaoWei'] text-xl text-foreground">
             不是一个人在战斗
           </p>
-          <p className="text-slate-500">
+          <p className="text-muted-foreground">
             AI 是我的伙伴，工具链是我的武器，<br className="sm:hidden" />
             而你，可能是下一个同行者
           </p>
