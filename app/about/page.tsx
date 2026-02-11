@@ -1,25 +1,23 @@
 import type { Metadata } from "next"
 import { AboutHero } from "@/components/about/about-hero"
-import { OurMission } from "@/components/about/our-mission"
+import { OurManifesto } from "@/components/about/our-manifesto"
 import { OurTeam } from "@/components/about/our-team"
-import { OurValues } from "@/components/about/our-values"
 import { OurJourney } from "@/components/about/our-journey"
-import { JoinUs } from "@/components/about/join-us"
+import { AboutCTA } from "@/components/about/about-cta"
 
 export const metadata: Metadata = {
-  title: "关于我们 | 涌现 - 为您的企业定制AI工作台",
-  description: "涌现的使命、团队和价值观。我们致力于帮助传统行业通过AI工作台实现数字化转型。",
+  title: "关于涌现 | AI工作台先行者",
+  description: "从互联网老兵到AI工作台先锋。我们通过定制AI工作台帮助企业提升效率、降低成本、完成范式转换。",
 }
 
 export default function AboutPage() {
   return (
-    <main className="pb-20">
+    <main className="bg-slate-950">
       <AboutHero />
-      <OurMission />
+      <OurManifesto />
       <OurTeam />
-      <OurValues />
       <OurJourney />
-      <JoinUs />
+      <AboutCTA />
     </main>
   )
 }

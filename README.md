@@ -1,30 +1,36 @@
-# yongxian.xyz
+# 涌现 (yongxian.xyz)
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+为企业定制AI工作台，提升效率、降低成本、完成范式转换。
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/dao210s-projects/yongxian)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/8K4zT4yTCbm)
 
-## Overview
+## 概述
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+涌现科技由互联网老兵创立，是AI工作台先行者。我们通过定制AI工作台帮助企业提升效率、降低成本、完成企业范式转换。
 
-## Deployment
+## 部署
 
-Your project is live at:
+项目部署于: **[https://vercel.com/dao210s-projects/yongxian](https://vercel.com/dao210s-projects/yongxian)**
 
-**[https://vercel.com/dao210s-projects/yongxian](https://vercel.com/dao210s-projects/yongxian)**
+## 本地开发
 
-## Build your app
+```bash
+# 安装依赖
+pnpm install
 
-Continue building your app on:
+# 启动开发服务器
+pnpm dev
 
-**[https://v0.app/chat/8K4zT4yTCbm](https://v0.app/chat/8K4zT4yTCbm)**
+# 构建生产版本
+pnpm build
+```
 
-## How It Works
+## 技术栈
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- Next.js 16.1.6
+- React 19.2.4
+- TypeScript
+- Tailwind CSS
+- Radix UI
+- next-themes
+- Vercel Analytics
