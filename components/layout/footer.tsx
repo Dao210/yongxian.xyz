@@ -63,11 +63,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-foreground">
-                  加入我们
-                </Link>
-              </li>
-              <li>
                 <a
                   href="mailto:hello@yongxian.xyz"
                   className="text-muted-foreground hover:text-foreground"

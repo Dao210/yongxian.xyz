@@ -100,7 +100,7 @@ export function ContactSection() {
                       </svg>
                       <span className="text-sm font-medium text-muted-foreground">微信公众号</span>
                     </div>
-                    <p className="text-foreground font-semibold">涌现 AI 工作台</p>
+                    <p className="text-foreground font-semibold">智能体实验室</p>
                   </div>
 
                   {/* Process hint */}
