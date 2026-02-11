@@ -2,40 +2,55 @@
 
 import { useRef, useEffect, useState } from "react"
 
-const skills = [
-  { name: "AI 工作台架构", level: 95, color: "from-cyan-400 to-blue-500" },
-  { name: "企业级系统集成", level: 90, color: "from-blue-400 to-indigo-500" },
-  { name: "工作流自动化", level: 92, color: "from-indigo-400 to-purple-500" },
-  { name: "提示词工程", level: 88, color: "from-purple-400 to-pink-500" },
-  { name: "全栈开发", level: 85, color: "from-pink-400 to-rose-500" },
+// Agent categories with their specialties
+const agentCategories = [
+  {
+    id: "core",
+    name: "核心能力",
+    color: "from-cyan-400 to-blue-500",
+    agents: [
+      { name: "Code Agent", role: "代码生成与审查", icon: "💻" },
+      { name: "Analyze Agent", role: "数据分析与洞察", icon: "📊" },
+      { name: "Write Agent", role: "内容创作与编辑", icon: "✍️" },
+    ],
+  },
+  {
+    id: "professional",
+    name: "专业领域",
+    color: "from-purple-400 to-pink-500",
+    agents: [
+      { name: "Design Agent", role: "UI/UX 设计", icon: "🎨" },
+      { name: "Marketing Agent", role: "营销策略", icon: "📢" },
+      { name: "Finance Agent", role: "财务分析", icon: "💰" },
+    ],
+  },
+  {
+    id: "tools",
+    name: "工具集成",
+    color: "from-emerald-400 to-teal-500",
+    agents: [
+      { name: "API Agent", role: "接口调用与集成", icon: "🔌" },
+      { name: "Data Agent", role: "数据处理与转换", icon: "🔄" },
+      { name: "Workflow Agent", role: "工作流自动化", icon: "⚙️" },
+    ],
+  },
 ]
 
-const beliefs = [
-  {
-    icon: "🎯",
-    title: "专注大于广度",
-    desc: "AI 工作台是未来，把一件事做到极致",
-  },
-  {
-    icon: "🔥",
-    title: "实战胜于理论",
-    desc: "真实业务场景中的坑，才是最宝贵的经验",
-  },
-  {
-    icon: "⚡",
-    title: "速度就是优势",
-    desc: "AI 时代，快速迭代比完美规划更重要",
-  },
+const stats = [
+  { number: "60", label: "AI Agent", desc: "虚拟员工" },
+  { number: "8", label: "能力域", desc: "全场景覆盖" },
+  { number: "∞", label: "扩展性", desc: "持续进化" },
 ]
 
 export function OurTeam() {
-  const sectionRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setIsVisible(true)
         }
       },
@@ -49,140 +64,217 @@ export function OurTeam() {
     return () => observer.disconnect()
   }, [])
 
+  const totalAgents = 60
+
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-24 bg-muted/30"
-    >
-      <div className="container">
+    <section ref={sectionRef} className="relative py-24 bg-muted/30 overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.03),transparent_70%)]" />
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
+      </div>
+
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="text-2xl">👤</span>
-            <span className="text-primary font-medium">超级个体</span>
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+            }`}
+          >
+            <span className="text-2xl">🌟</span>
+            <span className="text-primary font-medium">超级团队</span>
           </div>
-          <h2 className="font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl text-foreground mb-6">
-            创始人
+          <h2
+            className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            纯钧 <span className="text-primary">+</span> {totalAgents} 个 Agent
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            一个人，加上 AI 工具链
-            <br />
-            <span className="text-foreground font-semibold">就是一个团队的力量</span>
+          <p
+            className={`text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            一个人是起点，加上 AI 工具链成为无限可能。
+            <br className="hidden md:block" />
+            <span className="text-foreground font-semibold">60个虚拟员工</span>
+            ，随时待命，各司其职。
           </p>
         </div>
 
-        {/* Main content */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left: Avatar & Info */}
-            <div
-              className={`space-y-8 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-              }`}
-            >
-              {/* Avatar card */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative bg-background rounded-2xl p-8 shadow-lg border">
-                  <div className="flex items-start gap-6">
-                    {/* Avatar placeholder with artistic design */}
-                    <div className="relative w-28 h-28 flex-shrink-0">
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full animate-spin-slow opacity-20" />
-                      <div className="absolute inset-2 bg-gradient-to-br from-muted to-muted-foreground/10 rounded-full flex items-center justify-center">
-                        <span className="text-5xl">🧑‍💻</span>
-                      </div>
-                      {/* Orbiting dots */}
-                      <div className="absolute inset-0 animate-spin-slow">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan-400 rounded-full" />
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-purple-400 rounded-full" />
-                      </div>
-                    </div>
+        {/* Stats */}
+        <div
+          className={`grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-16 transition-all duration-1000 delay-600 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-purple-500">
+                {stat.number}
+              </div>
+              <div className="text-foreground font-medium text-sm mt-1">{stat.label}</div>
+              <div className="text-muted-foreground text-xs">{stat.desc}</div>
+            </div>
+          ))}
+        </div>
 
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-foreground mb-1">纯钧</h3>
-                      <p className="text-primary font-medium mb-3">创始人 & AI 工作台架构师</p>
-                      <p className="text-muted-foreground leading-relaxed">
-                        10年 AI 系统开发经验，从互联网大厂到独立探索。
-                        2022年 ChatGPT 发布后，All in AI，
-                        深信 AI 工作台是未来的工作方式。
-                      </p>
+        {/* Main visual: Core + Agents constellation */}
+        <div
+          className={`max-w-5xl mx-auto transition-all duration-1000 delay-800 ${
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}
+        >
+          {/* Center core: 纯钧 */}
+          <div className="relative">
+            {/* Orbital rings */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] pointer-events-none">
+              <div className="absolute inset-0 rounded-full border border-primary/10 animate-pulse" />
+              <div className="absolute inset-8 rounded-full border border-primary/5 animate-pulse" style={{ animationDelay: "0.5s" }} />
+              <div className="absolute inset-16 rounded-full border border-primary/5 animate-pulse" style={{ animationDelay: "1s" }} />
+            </div>
+
+            {/* Core avatar */}
+            <div className="relative z-10 flex justify-center mb-12">
+              <div className="relative group">
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-cyan-500/20 to-purple-500/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500" />
+
+                {/* Avatar container */}
+                <div className="relative w-32 h-32 md:w-40 md:h-40">
+                  {/* Rotating ring */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 opacity-20 animate-spin-slow" />
+
+                  {/* Core */}
+                  <div className="absolute inset-2 rounded-full bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center shadow-2xl">
+                    <div className="text-center">
+                      <div className="text-5xl md:text-6xl">🧑‍💻</div>
+                      <div className="text-white font-bold text-xs md:text-sm mt-1">纯钧</div>
                     </div>
+                  </div>
+
+                  {/* Orbiting dots */}
+                  <div className="absolute inset-0 animate-spin-slow">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50" />
                   </div>
                 </div>
-              </div>
 
-              {/* Beliefs */}
-              <div className="grid sm:grid-cols-3 gap-4">
-                {beliefs.map((belief, index) => (
-                  <div
-                    key={index}
-                    className="bg-background rounded-xl p-5 shadow-sm border hover:border-primary/50 transition-colors"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <span className="text-3xl mb-2 block">{belief.icon}</span>
-                    <h4 className="text-foreground font-semibold mb-1">{belief.title}</h4>
-                    <p className="text-sm text-muted-foreground">{belief.desc}</p>
-                  </div>
-                ))}
+                {/* Connection lines to agents (decorative) */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <svg className="w-full h-full" style={{ transform: "rotate(0deg)" }}>
+                    <line x1="50%" y1="50%" x2="10%" y2="20%" stroke="url(#gradient1)" strokeWidth="1" opacity="0.2" />
+                    <line x1="50%" y1="50%" x2="90%" y2="20%" stroke="url(#gradient1)" strokeWidth="1" opacity="0.2" />
+                    <line x1="50%" y1="50%" x2="10%" y2="80%" stroke="url(#gradient1)" strokeWidth="1" opacity="0.2" />
+                    <line x1="50%" y1="50%" x2="90%" y2="80%" stroke="url(#gradient1)" strokeWidth="1" opacity="0.2" />
+                    <defs>
+                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgb(6,182,212)" stopOpacity="0" />
+                        <stop offset="50%" stopColor="rgb(6,182,212)" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="rgb(168,85,247)" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
               </div>
             </div>
 
-            {/* Right: Skills */}
-            <div
-              className={`space-y-8 transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-              }`}
-            >
-              {/* Skills */}
-              <div className="bg-background rounded-2xl p-8 shadow-sm border">
-                <h4 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                  <span>⚡</span>
-                  <span>核心能力</span>
-                </h4>
-                <div className="space-y-5">
-                  {skills.map((skill, index) => (
-                    <div key={index} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-foreground font-medium">{skill.name}</span>
-                        <span className="text-muted-foreground text-sm">{skill.level}%</span>
+            {/* Agent categories arranged around core */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {agentCategories.map((category, catIndex) => (
+                <div
+                  key={category.id}
+                  className={`relative transition-all duration-500 delay-${catIndex * 200} ${
+                    hoveredCategory && hoveredCategory !== category.id ? "opacity-40 scale-95" : "opacity-100 scale-100"
+                  }`}
+                  onMouseEnter={() => setHoveredCategory(category.id)}
+                  onMouseLeave={() => setHoveredCategory(null)}
+                >
+                  {/* Category card */}
+                  <div className="bg-background rounded-2xl p-6 shadow-sm border hover:border-primary/30 hover:shadow-md transition-all">
+                    {/* Category header */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
+                        <span className="text-white text-lg">
+                          {catIndex === 0 ? "⚡" : catIndex === 1 ? "🎯" : "🔧"}
+                        </span>
                       </div>
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <div
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out ${
-                            isVisible ? "w-full" : "w-0"
-                          }`}
-                          style={{ transitionDelay: `${500 + index * 150}ms` }}
-                        />
+                      <div>
+                        <h4 className="font-bold text-foreground">{category.name}</h4>
+                        <p className="text-xs text-muted-foreground">
+                          {catIndex === 0 ? "20+" : catIndex === 1 ? "25+" : "15+"} 个 Agent
+                        </p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* CTA */}
-              <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border border-primary/20 rounded-2xl p-6 text-center">
-                <p className="text-muted-foreground mb-2">想要一起探索 AI 工作台的无限可能？</p>
-                <a
-                  href="mailto:hello@yongxian.xyz"
-                  className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
-                >
-                  <span>联系我</span>
-                  <span>→</span>
-                </a>
-              </div>
+                    {/* Agent list */}
+                    <div className="space-y-2">
+                      {category.agents.map((agent, agentIndex) => (
+                        <div
+                          key={agentIndex}
+                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group/agent"
+                        >
+                          <span className="text-xl group-hover/agent:scale-110 transition-transform">
+                            {agent.icon}
+                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-sm font-medium text-foreground truncate">
+                              {agent.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground truncate">
+                              {agent.role}
+                            </div>
+                          </div>
+                          <div className="w-2 h-2 rounded-full bg-primary/50 group-hover/agent:bg-primary animate-pulse" />
+                        </div>
+                      ))}
+
+                      {/* More indicator */}
+                      <div className="text-center pt-2">
+                        <span className="text-xs text-muted-foreground">
+                          +{catIndex === 0 ? "17 more" : catIndex === 1 ? "22 more" : "12 more"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Bottom message */}
-        <div className="text-center mt-16 space-y-4">
-          <p className="font-['ZCOOL_XiaoWei'] text-xl text-foreground">
-            不是一个人在战斗
+        <div
+          className={`mt-16 text-center transition-all duration-1000 delay-1400 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="font-['ZCOOL_XiaoWei'] text-xl text-foreground mb-2">
+            一个人，一支队伍
           </p>
           <p className="text-muted-foreground">
-            AI 是我的伙伴，工具链是我的武器，<br className="sm:hidden" />
-            而你，可能是下一个同行者
+            AI Agent 不是工具，而是你的{" "}
+            <span className="text-primary font-medium">虚拟团队</span>
           </p>
+
+          {/* CTA */}
+          <div className="mt-8">
+            <a
+              href="mailto:hello@yongxian.xyz"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-cyan-500 text-white font-medium rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all hover:scale-105"
+            >
+              <span>构建你的 AI 团队</span>
+              <span>→</span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -192,7 +284,7 @@ export function OurTeam() {
           to { transform: rotate(360deg); }
         }
         .animate-spin-slow {
-          animation: spin-slow 8s linear infinite;
+          animation: spin-slow 20s linear infinite;
         }
       `}</style>
     </section>
