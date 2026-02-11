@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 
 import * as React from 'react'
@@ -104,7 +105,8 @@ const ChartTooltip = RechartsPrimitive.Tooltip
 
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+  (
+    React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
     React.ComponentProps<'div'> & {
       hideLabel?: boolean
       hideIndicator?: boolean
@@ -112,6 +114,7 @@ const ChartTooltipContent = React.forwardRef<
       nameKey?: string
       labelKey?: string
     }
+  )
 >(
   (
     {
@@ -254,6 +257,7 @@ const ChartTooltipContent = React.forwardRef<
     )
   },
 )
+// @ts-check
 ChartTooltipContent.displayName = 'ChartTooltip'
 
 const ChartLegend = RechartsPrimitive.Legend

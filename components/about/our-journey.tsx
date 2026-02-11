@@ -95,7 +95,9 @@ export function OurJourney() {
           {milestones.map((milestone, index) => (
             <div
               key={index}
-              ref={(el) => (milestoneRefs.current[index] = el)}
+              ref={(el) => {
+                milestoneRefs.current[index] = el
+              }}
               className={`relative mb-20 md:mb-28 transition-all duration-1000 ${
                 index <= activeMilestone
                   ? "opacity-100 translate-y-0"

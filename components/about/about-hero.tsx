@@ -48,11 +48,11 @@ export function AboutHero() {
 
         {/* Floating particles */}
         <div className="particles">
-          <div className="particle" style={{ left: "10%", top: "20%", delay: "0s" }} />
-          <div className="particle" style={{ left: "80%", top: "30%", delay: "1s" }} />
-          <div className="particle" style={{ left: "30%", top: "70%", delay: "2s" }} />
-          <div className="particle" style={{ left: "70%", top: "80%", delay: "3s" }} />
-          <div className="particle" style={{ left: "50%", top: "50%", delay: "4s" }} />
+          <div className="particle" style={{ left: "10%", top: "20%", "--delay": "0s" } as any} />
+          <div className="particle" style={{ left: "80%", top: "30%", "--delay": "1s" } as any} />
+          <div className="particle" style={{ left: "30%", top: "70%", "--delay": "2s" } as any} />
+          <div className="particle" style={{ left: "70%", top: "80%", "--delay": "3s" } as any} />
+          <div className="particle" style={{ left: "50%", top: "50%", "--delay": "4s" } as any} />
         </div>
       </div>
 
@@ -81,7 +81,7 @@ export function AboutHero() {
             从互联网老兵
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-purple-500">
-              到 AI 工作台先锋
+              到 AI 工作台先行者
             </span>
           </h1>
 
@@ -157,6 +157,7 @@ export function AboutHero() {
           border-radius: 50%;
           opacity: 0.2;
           animation: float 6s ease-in-out infinite;
+          animation-delay: var(--delay, 0s);
         }
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); }

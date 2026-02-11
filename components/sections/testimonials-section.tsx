@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Quote } from "lucide-react"
 
 const testimonials = [
