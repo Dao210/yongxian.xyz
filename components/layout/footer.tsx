@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Logo } from "@/components/ui/logo"
+import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 
 export default function Footer() {
   return (
@@ -14,24 +14,35 @@ export default function Footer() {
                 <span className="text-gray-800">现</span>
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">通过定制AI工作台提升企业能力，助力中小企业发展。</p>
+            <p className="text-sm text-muted-foreground">
+              通过定制AI工作台提升企业能力，助力中小企业发展。
+            </p>
           </div>
 
           <div>
             <h3 className="mb-4 text-sm font-semibold">解决方案</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/solutions/customer-service" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/solutions/customer-service"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   客户服务
                 </Link>
               </li>
               <li>
-                <Link href="/solutions/sales" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/solutions/sales"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   销售支持
                 </Link>
               </li>
               <li>
-                <Link href="/solutions/operations" className="text-muted-foreground hover:text-foreground">
+                <Link
+                  href="/solutions/operations"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   运营管理
                 </Link>
               </li>
@@ -57,14 +68,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                  博客
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground">
+                <a
+                  href="mailto:hello@yongxian.xyz"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   联系我们
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -92,9 +101,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-6">
-          <p className="text-center text-xs text-muted-foreground">© {new Date().getFullYear()} 涌现. 保留所有权利。</p>
+          <p className="text-center text-xs text-muted-foreground">
+            © {new Date().getFullYear()} 涌现. 保留所有权利。
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
