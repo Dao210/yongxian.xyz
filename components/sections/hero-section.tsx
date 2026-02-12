@@ -80,20 +80,6 @@ export function HeroSection() {
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                {/* Badge */}
-                <div
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-                  }`}
-                  style={{ transitionDelay: '400ms' }}
-                >
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-                  </span>
-                  <span className="text-primary text-sm font-medium">AI 工作台专家</span>
-                </div>
-
                 {/* Main headline */}
                 <h1
                   className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 transition-all duration-1000 ${
