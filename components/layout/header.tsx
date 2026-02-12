@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Logo } from "@/components/ui/logo"
-import { MainNav } from "@/components/navigation/main-nav"
-import { MobileMenu } from "@/components/navigation/mobile-menu"
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
+import { MainNav } from '@/components/navigation/main-nav';
+import { MobileMenu } from '@/components/navigation/mobile-menu';
 
 export default function Header() {
   return (
@@ -21,19 +21,15 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link href="/login" className="hidden md:block">
-            <Button variant="ghost" size="sm">
-              登录
-            </Button>
-          </Link>
-
           <Link href="/book-consultation">
-            <Button className="bg-sky-500 hover:bg-sky-600 text-white rounded-md text-sm">预约咨询</Button>
+            <Button className="bg-sky-500 hover:bg-sky-600 text-white rounded-md text-sm">
+              预约咨询
+            </Button>
           </Link>
 
           <MobileMenu className="md:hidden" />
         </div>
       </div>
     </header>
-  )
+  );
 }
