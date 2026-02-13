@@ -104,14 +104,6 @@ export function ConsultationSection() {
             >
               预约业务咨询
             </h2>
-            <p
-              className={`text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-1000 delay-600 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              通过微信联系我们的专家，支付<span className="text-primary font-semibold">¥299</span>
-              即可获得30分钟的专业业务咨询
-            </p>
           </div>
 
           {isSubmitted ? (
