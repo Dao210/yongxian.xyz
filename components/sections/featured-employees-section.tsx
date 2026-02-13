@@ -19,7 +19,7 @@ const digitalEmployees: DigitalEmployee[] = [
     title: '营销助手',
     description: '智能营销活动策划与执行，自动化广告投放优化，数据分析驱动增长决策，提升营销ROI。',
     icon: MessageSquare,
-    image: '/营销助手20260203.webp',
+    image: '/images/solutions/sales-assistant.jpg',
     link: 'https://52tuan.com/marketing',
   },
   {
@@ -27,14 +27,14 @@ const digitalEmployees: DigitalEmployee[] = [
     description:
       '合同审核与合规审查智能自动化，NDA分级风险评估，法律咨询标准化回复，提升法务效率。',
     icon: FileText,
-    image: '/法务助手20260209.webp',
+    image: '/images/solutions/document-processor.jpg',
     link: 'https://52tuan.com/legal',
   },
   {
     title: '财务助手',
     description: '智能发票处理与费用管理，自动化财务报表生成，现金流预测与风险预警，提升财务效率。',
     icon: DollarSign,
-    image: '/财务助手20260210.webp',
+    image: '/images/solutions/scheduling.jpg',
     link: 'https://52tuan.com/finance',
   },
 ];

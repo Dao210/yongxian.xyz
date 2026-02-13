@@ -5,147 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
-// 统计数据（带 SVG 图标）
+// 统计数据
 const stats = [
-  {
-    value: '50+',
-    label: '服务企业',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="32"
-          cy="32"
-          r="28"
-          stroke="url(#gradient1)"
-          strokeWidth="2"
-          fill="none"
-          opacity="0.2"
-        />
-        <path
-          d="M20 28 L44 28 L44 48 L20 48 Z"
-          stroke="url(#gradient1)"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M24 28 L24 22 L40 22 L40 28"
-          stroke="url(#gradient1)"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path d="M32 16 L32 20" stroke="url(#gradient1)" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M32 48 L32 54" stroke="url(#gradient1)" strokeWidth="2.5" strokeLinecap="round" />
-        <defs>
-          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" />
-            <stop offset="100%" stopColor="#3b82f6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
-    value: '30+',
-    label: '成功案例',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="32"
-          cy="32"
-          r="28"
-          stroke="url(#gradient2)"
-          strokeWidth="2"
-          fill="none"
-          opacity="0.2"
-        />
-        <path
-          d="M32 18 L35 26 L44 26 L37 31 L40 40 L32 35 L24 40 L27 31 L20 26 L29 26 Z"
-          stroke="url(#gradient2)"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <defs>
-          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" />
-            <stop offset="100%" stopColor="#3b82f6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
-    value: '98%',
-    label: '客户满意度',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="32"
-          cy="32"
-          r="28"
-          stroke="url(#gradient3)"
-          strokeWidth="2"
-          fill="none"
-          opacity="0.2"
-        />
-        <circle cx="32" cy="32" r="14" stroke="url(#gradient3)" strokeWidth="2.5" fill="none" />
-        <circle cx="32" cy="28" r="2" fill="url(#gradient3)" />
-        <path
-          d="M26 36 Q32 42 38 36"
-          stroke="url(#gradient3)"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M24 26 L22 24 M40 26 L42 24"
-          stroke="url(#gradient3)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" />
-            <stop offset="100%" stopColor="#3b82f6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
-    value: '24/7',
-    label: '专家支持',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="32"
-          cy="32"
-          r="28"
-          stroke="url(#gradient4)"
-          strokeWidth="2"
-          fill="none"
-          opacity="0.2"
-        />
-        <circle cx="32" cy="32" r="16" stroke="url(#gradient4)" strokeWidth="2.5" fill="none" />
-        <path d="M32 20 L32 26" stroke="url(#gradient4)" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M32 38 L32 44" stroke="url(#gradient4)" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M20 32 L26 32" stroke="url(#gradient4)" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M38 32 L44 32" stroke="url(#gradient4)" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="32" cy="32" r="2" fill="url(#gradient4)" />
-        <defs>
-          <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" />
-            <stop offset="100%" stopColor="#3b82f6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
+  { value: '50+', label: '服务企业' },
+  { value: '30+', label: '成功案例' },
+  { value: '98%', label: '客户满意度' },
+  { value: '24/7', label: '专家支持' },
 ];
 
 export function HeroSection() {
@@ -206,7 +71,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="container relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-12 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             {/* Left: Text Content */}
             <div className="order-2 lg:order-1 flex-1">
               <div
@@ -277,16 +142,15 @@ export function HeroSection() {
                 style={{ transitionDelay: '400ms' }}
               >
                 {/* Hero Image */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8 lg:mb-0">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8 lg:mb-0 aspect-[4/3]">
                   <Image
-                    src="/images/hero-digital-employee.jpg"
+                    src="/images/hero-digital-employee.webp"
                     alt="AI工作台"
                     fill
                     sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw"
                     quality={85}
                     priority
-                    className="object-cover w-full"
-                    style={{ height: 'auto', minHeight: '300px' }}
+                    className="object-cover"
                   />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-cyan-500/20 to-transparent" />
@@ -297,13 +161,11 @@ export function HeroSection() {
                   {stats.map((stat, index) => (
                     <div
                       key={index}
-                      className={`bg-background/90 backdrop-blur-sm rounded-xl p-4 border border-border shadow-lg transition-all duration-500 hover:scale-105 hover:border-primary/30 ${
+                      className={`bg-background/90 backdrop-blur-sm rounded-xl p-5 border border-border shadow-lg transition-all duration-500 hover:scale-105 hover:border-primary/30 ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                       }`}
                       style={{ transitionDelay: `${1200 + index * 150}ms` }}
                     >
-                      {/* Icon */}
-                      <div className="w-10 h-10 mb-2 text-primary">{stat.icon}</div>
                       <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                         {stat.value}
                       </div>
