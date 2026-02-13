@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description:
     '30分钟一对一专业咨询，帮您分析业务需求，设计定制化AI工作台解决方案。咨询费用¥299，可抵扣项目费用。',
   keywords: ['AI工作台咨询', 'AI咨询', 'AI解决方案', 'AI定制服务'],
+  alternates: {
+    canonical: 'https://yongxian.xyz/book-consultation',
+  },
 };
 
 export default function BookConsultationPage() {

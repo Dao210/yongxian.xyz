@@ -72,17 +72,6 @@ export const metadata: Metadata = {
   applicationName: '涌现',
   category: 'technology',
 
-  // 视口和主题
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0EA5E9' },
-    { media: '(prefers-color-scheme: dark)', color: '#0C4A6E' },
-  ],
-
   // 搜索引擎配置
   robots: {
     index: true,

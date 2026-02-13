@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: '解决方案 | 涌现 - 为您的企业定制AI工作台',
   description:
     '为电商、制造业等不同行业提供定制AI工作台解决方案，解决具体业务挑战，提升效率和降低成本。',
+  alternates: {
+    canonical: 'https://yongxian.xyz/solutions',
+  },
 };
 
 export default function SolutionsPage() {
