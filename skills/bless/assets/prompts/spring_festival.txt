@@ -1,0 +1,110 @@
+# 春节图像生成提示词
+
+## 风格定位
+现代简约风格，融合传统元素与当代审美
+
+## 核心提示词
+
+### 选项1: 温暖家庭场景
+```
+A warm Chinese New Year family dinner scene, modern minimalist style.
+Round table with traditional dishes, soft warm lighting from hanging red lanterns.
+In the background: subtle spring couplet calligraphy on clean white walls.
+Through the window: a glimpse of winter evening sky with first stars.
+Color palette: warm reds and golds as accents, not overwhelming.
+Atmosphere: intimate, peaceful, hopeful.
+Style: contemporary watercolor illustration, clean lines, generous white space.
+No text in image.
+```
+
+### 选项2: 成长与希望
+```
+A symbolic illustration of new beginnings for Chinese New Year.
+A single sprout emerging from winter soil, protected by gentle hands.
+In the background: abstract suggestion of mountains (journey ahead) and a sunrise.
+Subtle red paper cut art style decoration in corners.
+Color palette: earth tones with touches of auspicious red.
+Mood: quiet, determined, full of potential.
+Style: minimalist digital art, inspired by Chinese ink painting but modern.
+No text in image.
+```
+
+### 选项3: 城市中的温暖
+```
+A modern city apartment during Chinese New Year eve.
+A person at window, looking at city lights with a warm cup of tea.
+Indoor: subtle red lantern string lights, a clean paper-cut on window.
+Outdoor: city skyline with distant fireworks (small, not overwhelming).
+A sense of peace amid celebration.
+Style: Studio Ghibli inspired - warm, detailed, emotionally resonant.
+Color: warm indoor glow contrasting with cool blue night outside.
+No text in image.
+```
+
+## 元素库（可组合使用）
+
+### 灯光元素
+- Soft lantern glow (warm, not harsh red)
+- Candlelight on dinner table
+- First stars of the year
+- Window warm light from buildings
+
+### 传统元素（现代诠释）
+- Paper cuts (minimalist, not ornate)
+- Spring couplets (abstract suggestion, not full text)
+- Red envelopes (artistic arrangement, not scattered)
+- Bamboo (symbol of resilience and growth)
+
+### 自然元素
+- Sprout/new growth
+- Winter branches with first buds
+- Snow (if applicable to region)
+- Dawn light
+
+### 人物元素
+- Silhouette or back view
+- Hands (holding, preparing, protecting)
+- Reflection in window
+- Shadow on wall
+
+## 色彩指导
+
+### 主色
+- Warm white/cream (base)
+- Soft gray (modern touch)
+
+### 点缀色（谨慎使用）
+- Cinnabar red (not bright red)
+- Antique gold (not yellow gold)
+- Deep navy (for contrast)
+
+### 避免
+- Bright neon colors
+- Overwhelming red (use as accent only)
+- Clashing colors
+
+## 构图原则
+
+1. **留白** - 至少30%留白，避免拥挤
+2. **焦点** - 单一清晰焦点，不分散
+3. **层次** - 前景中景背景分明
+4. **平衡** - 视觉重量均衡
+
+## 负面提示词（需要避免）
+
+```
+NO: overwhelming red, gaudy decorations, crowded composition,
+NO: text, Chinese characters, busy patterns,
+NO: traditional realistic painting style (too old-fashioned),
+NO: cartoon/anime style (not serious enough),
+NO: overly ornate details (not modern),
+NO: dragons, lions, or mythical creatures (unless specifically requested),
+NO: fireworks as main element (use as subtle background only)
+```
+
+## 技术规格
+
+- Aspect ratio: 16:9 or 4:3
+- Resolution: minimum 1024x1024
+- Style: digital illustration / watercolor / minimalist art
+- Mood: warm, hopeful, peaceful

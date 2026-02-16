@@ -1,0 +1,112 @@
+# 端午节图像生成提示词
+
+## 风格定位
+动感有力，突出竞渡与坚守的精神
+
+## 核心提示词
+
+### 选项1: 龙舟竞渡的现代诠释
+```
+An artistic interpretation of dragon boat racing.
+Abstract representation of synchronized paddling motion.
+Multiple boats shown as flowing lines suggesting movement and unity.
+Water rendered in dynamic blues with splashes turned into decorative patterns.
+Dragons on boats suggested through minimalist shapes, not literal creatures.
+Style: modern art with motion lines and fluid dynamics.
+Color palette: energetic blues, whites, with strategic red accents.
+Mood: powerful, determined, united.
+No text in image.
+```
+
+### 选项2: 屈原与气节
+```
+A symbolic tribute to Qu Yuan's spirit.
+A solitary figure standing by flowing water, holding a scroll.
+In the background: subtle suggestion of ancient Chinese landscape.
+Zongzi leaves floating on water as offering.
+The figure is contemplative, not dramatic - inner strength.
+Style: inspired by traditional ink painting but with modern minimalism.
+Color: muted earth tones, water blues, with single point of red (heart/passion).
+Atmosphere: dignified, thoughtful, timeless.
+No text in image.
+```
+
+### 选项3: 粽子的艺术呈现
+```
+An artistic arrangement of zongzi (sticky rice dumplings).
+Multiple zongzi in various states of unwrapping, showing the layers.
+Bamboo leaves rendered as flowing green ribbons.
+Steam rising becomes abstract cloud patterns.
+Lighting suggests early morning preparation time.
+Style: contemporary food photography meets artistic illustration.
+Color: fresh greens, warm whites, subtle browns.
+Mood: warm, craft-focused, cultural pride.
+No text in image.
+```
+
+## 元素库
+
+### 竞渡元素
+- Paddles in motion (showing rhythm)
+- Water spray/splashes
+- Boat shapes (simplified, not ornate)
+- Dragon heads (abstract suggestion)
+
+### 传统元素
+- Zongzi (pyramid-shaped rice dumplings)
+- Bamboo leaves (as wrapping material)
+- Realgar wine (traditional, shown subtly)
+- Mugwort/Calamus (hanging herbs)
+
+### 自然元素
+- Flowing water (river)
+- Summer greenery
+- Morning light
+- Rain (Drum Boy beating rain legend)
+
+### 人物元素
+- Paddling teams (synchronized motion)
+- Solo figure by water (contemplation)
+- Hands wrapping zongzi (craft)
+
+## 色彩指导
+
+### 主色
+- Deep river blue
+- Fresh leaf green
+- Clean white
+
+### 点缀色
+- Cinnabar red (dragon heads, drums)
+- Gold (sunlight on water)
+- Brown (zongzi leaves)
+
+### 避免
+- Overwhelming red
+- Dark/gloomy colors
+- Clashing bright colors
+
+## 构图原则
+
+1. **动势** - 对角线构图表现速度和力量
+2. **节奏** - 重复元素形成视觉节奏（船桨、水波）
+3. **焦点** - 单一清晰焦点（龙舟队、屈原像、粽子的中心）
+4. **流动** - 线条引导视线流动
+
+## 负面提示词
+
+```
+NO: cute cartoon characters (not serious enough),
+NO: overly ornate traditional dragon boats (too old-fashioned),
+NO: chaotic crowds (focus on unity and order),
+NO: text or poems in image,
+NO: gore or dramatic death scenes (for Qu Yuan reference),
+NO: rainy storm scenes (unless subtle, focus on the spirit)
+```
+
+## 技术规格
+
+- Aspect ratio: 16:9 (wide for boat scenes) or 4:3
+- Resolution: minimum 1024x1024
+- Style: dynamic illustration / modern art / stylized photography
+- Mood: energetic, determined, culturally proud

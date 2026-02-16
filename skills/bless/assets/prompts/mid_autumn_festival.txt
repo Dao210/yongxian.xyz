@@ -1,0 +1,111 @@
+# 中秋节图像生成提示词
+
+## 风格定位
+宁静致远，突出月圆与思念的情感连接
+
+## 核心提示词
+
+### 选项1: 月光与远方
+```
+A serene Mid-Autumn night scene.
+A person standing by a window, looking at a bright full moon.
+Indoor: warm light, a cup of tea, mooncakes on a simple plate.
+Outdoor: full moon in clear sky, subtle suggestion of distant city lights.
+A feeling of longing and connection across distances.
+Style: contemporary illustration with Japanese aesthetic influence - clean, emotional.
+Color palette: deep blues (night sky) contrasted with warm indoor gold.
+Atmosphere: quiet, contemplative, bittersweet but hopeful.
+No text in image.
+```
+
+### 选项2: 团圆时刻
+```
+A family Mid-Autumn reunion scene, intimate and warm.
+Several generations gathered around a round table with mooncakes and tea.
+Soft lantern light creates warm atmosphere.
+Through window: full moon visible.
+Focus on faces showing genuine joy and connection.
+Style: warm illustration style, detail-oriented but not photorealistic.
+Mood: warmth, belonging, gratitude.
+Color: warm tones with moonlight blue accents.
+No text in image.
+```
+
+### 选项3: 月兔的现代诠释
+```
+A minimalist artistic reimagining of the Jade Rabbit moon legend.
+A stylized rabbit silhouette against a large full moon.
+Surrounded by subtle floating elements (osmanthus flowers, mooncake shapes).
+Abstract and symbolic, not cute or cartoonish.
+Style: modern geometric art with traditional Chinese aesthetics.
+Color: silver, pale gold, deep blue.
+Mood: mythic, poetic, serene.
+No text in image.
+```
+
+## 元素库
+
+### 月亮元素
+- Full moon (prominent but not overwhelming)
+- Moonlight reflection (on water, window, or tea)
+- Moon phases (subtle background pattern)
+
+### 传统元素（现代诠释）
+- Mooncakes (artistic arrangement, not pile)
+- Osmanthus flowers (delicate, scattered)
+- Lanterns (hanging or floating, subtle)
+- Tea ceremony elements (cup, pot, steam)
+
+### 人物元素
+- Gazing at moon
+- Holding tea cup
+- Family gathering
+- Silhouette against moon
+
+### 自然元素
+- Night sky with stars
+- Calm water (reflection)
+- Autumn leaves (subtle)
+- Osmanthus in bloom
+
+## 色彩指导
+
+### 主色
+- Deep midnight blue
+- Moonlight silver/white
+- Warm gold (indoor light)
+
+### 点缀色
+- Pale yellow (mooncakes)
+- Soft orange (lanterns)
+- Jade green (subtle accent)
+
+### 避免
+- Bright daylight colors
+- Harsh reds (not moon festival appropriate)
+- Neon colors
+
+## 构图原则
+
+1. **月亮位置** - 通常在上方1/3处或作为背景元素
+2. **留白** - 大量天空留白，营造空灵意境
+3. **对角线** - 可用月光、视线形成对角线构图
+4. **层次** - 前景人物/物体，中景活动，远景月亮
+
+## 负面提示词
+
+```
+NO: cute cartoon rabbits (too childish),
+NO: overly ornate palace scenes (too traditional),
+NO: busy streets or crowds (breaks the quiet mood),
+NO: text, poems, or calligraphy in image,
+NO: daylight scenes (must be night),
+NO: fireworks (not appropriate for quiet moon appreciation)
+```
+
+## 技术规格
+
+- Aspect ratio: 16:9 or 3:4 (portrait works well for moon)
+- Resolution: minimum 1024x1024
+- Style: illustration / watercolor / digital art
+- Mood: serene, contemplative, warm
