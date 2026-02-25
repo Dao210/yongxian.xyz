@@ -11,7 +11,7 @@
 # ╚═══════════════════════════════════════════════════════════════════════════╝
 #
 # 使用方法:
-#   curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/yongxianInstaller/install.sh | bash
 #   或本地执行: chmod +x install.sh && ./install.sh
 #
 

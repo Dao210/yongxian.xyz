@@ -3974,7 +3974,7 @@ manage_service() {
             echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
             echo ""
             echo -e "${CYAN}如需重新安装，请运行:${NC}"
-            echo "  curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/main/install.sh | bash"
+            echo "  curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/yongxianInstaller/install.sh | bash"
             echo ""
             echo -e "${CYAN}或下载桌面版:${NC}"
             echo "  https://github.com/insight68/yongxian"

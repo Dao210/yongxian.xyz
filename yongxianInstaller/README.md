@@ -57,7 +57,7 @@
 ### 方式一：一键安装（命令行版）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/yongxianInstaller/install.sh | bash
 ```
 
 安装脚本会自动：
