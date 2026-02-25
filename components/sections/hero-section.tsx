@@ -117,9 +117,9 @@ export function HeroSection() {
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-2xl">💻</span>
                       <div>
-                        <h3 className="font-semibold text-foreground">开源社区版</h3>
+                        <h3 className="font-semibold text-foreground">一人公司免费开源版</h3>
                         <p className="text-sm text-muted-foreground">
-                          一键安装 YongXian AI 助手,在终端(Shell)执行下面的命令：
+                          一键免费安装一人公司涌现AI助手,在终端(Shell)执行下面的命令：
                         </p>
                       </div>
                     </div>

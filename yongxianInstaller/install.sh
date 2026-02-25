@@ -1691,7 +1691,7 @@ main() {
     fi
     
     echo ""
-    echo -e "${GREEN}🦞 YongXian 安装完成！祝你使用愉快！${NC}"
+    echo -e "${GREEN} YongXian 安装完成！祝你使用愉快！${NC}"
     echo ""
 }
 
