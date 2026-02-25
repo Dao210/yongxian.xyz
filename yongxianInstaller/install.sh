@@ -279,8 +279,14 @@ create_directories() {
 install_from_source() {
     log_step "从源码构建 YongXian..."
 
-    local BUILD_DIR="/tmp/openclaw-build-$$"
+    local BUILD_DIR="/yongxian-build-$$"
     local CURRENT_DIR="$(pwd)"
+
+    # 提前验证 sudo 权限
+    if ! sudo -v 2>/dev/null; then
+        log_error "此安装需要 sudo 权限（构建目录在根目录）"
+        exit 1
+    fi
 
     # 检查 pnpm 是否安装
     if ! check_command pnpm; then
@@ -294,16 +300,21 @@ install_from_source() {
         exit 1
     fi
 
-    # 清理并创建构建目录
-    rm -rf "$BUILD_DIR"
-    mkdir -p "$BUILD_DIR"
+    # 创建构建目录（如果不存在）
+    if [ ! -d "$BUILD_DIR" ]; then
+        log_info "创建构建目录: $BUILD_DIR"
+        sudo mkdir -p "$BUILD_DIR"
+    fi
 
-    # 克隆仓库
-    log_info "克隆仓库: $GITHUB_REPO"
-    if ! git clone --depth 1 "https://github.com/$GITHUB_REPO.git" "$BUILD_DIR"; then
-        log_error "克隆仓库失败"
-        rm -rf "$BUILD_DIR"
-        exit 1
+    # 克隆仓库（如果目录为空）
+    if [ -z "$(ls -A $BUILD_DIR 2>/dev/null)" ]; then
+        log_info "克隆仓库: $GITHUB_REPO"
+        if ! sudo git clone --depth 1 "https://github.com/$GITHUB_REPO.git" "$BUILD_DIR"; then
+            log_error "克隆仓库失败"
+            exit 1
+        fi
+    else
+        log_info "使用已存在的源码: $BUILD_DIR"
     fi
 
     cd "$BUILD_DIR"
@@ -313,7 +324,6 @@ install_from_source() {
     if ! pnpm install; then
         log_error "依赖安装失败"
         cd "$CURRENT_DIR"
-        rm -rf "$BUILD_DIR"
         exit 1
     fi
 
@@ -322,7 +332,6 @@ install_from_source() {
     if ! pnpm ui_cn:install; then
         log_error "UI 安装失败"
         cd "$CURRENT_DIR"
-        rm -rf "$BUILD_DIR"
         exit 1
     fi
 
@@ -331,7 +340,6 @@ install_from_source() {
     if ! pnpm build; then
         log_error "项目构建失败"
         cd "$CURRENT_DIR"
-        rm -rf "$BUILD_DIR"
         exit 1
     fi
 
@@ -340,15 +348,14 @@ install_from_source() {
     if ! pnpm link --global; then
         log_error "全局链接失败"
         cd "$CURRENT_DIR"
-        rm -rf "$BUILD_DIR"
         exit 1
     fi
 
-    # 清理
+    # 清理（不删除源码！）
     cd "$CURRENT_DIR"
-    rm -rf "$BUILD_DIR"
 
     log_info "源码构建完成"
+    log_info "源码保留在: $BUILD_DIR"
 }
 
 install_openclaw() {

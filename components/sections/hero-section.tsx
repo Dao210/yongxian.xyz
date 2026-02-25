@@ -87,7 +87,7 @@ export function HeroSection() {
                   }`}
                   style={{ transitionDelay: '600ms' }}
                 >
-                  为您的企业定制
+                  为渴求成长的企业定制
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-purple-500">
                     专属 AI 工作台
