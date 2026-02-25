@@ -127,14 +127,14 @@ export function HeroSection() {
                       <pre className="bg-slate-900 text-slate-100 rounded-lg p-3 text-sm overflow-x-auto font-mono">
                         <code>
                           curl -fsSL
-                          https://raw.githubusercontent.com/insight68/yongxian/yongxianInstaller/install.sh
+                          https://raw.githubusercontent.com/Dao210/yongxian.xyz/tree/main/yongxianInstaller/install.sh
                           | bash
                         </code>
                       </pre>
                       <button
                         onClick={() =>
                           navigator.clipboard.writeText(
-                            'curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/yongxianInstaller/install.sh | bash'
+                            'curl -fsSL https://raw.githubusercontent.com/Dao210/yongxian.xyz/tree/main/yongxianInstaller/install.sh | bash'
                           )
                         }
                         className="absolute top-2 right-2 p-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors opacity-0 group-hover:opacity-100"
