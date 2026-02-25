@@ -1625,7 +1625,7 @@ run_config_menu() {
 main() {
     print_banner
     
-    echo -e "${YELLOW}⚠️  警告: YongXian 需要完全的计算机权限${NC}"
+    echo -e "${YELLOW}⚠️  警告: YongXian AI助手社区版 需要完全的计算机权限${NC}"
     echo -e "${YELLOW}    不建议在主要工作电脑上安装，建议使用专用服务器或虚拟机${NC}"
     echo ""
     
