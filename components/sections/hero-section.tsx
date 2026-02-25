@@ -107,28 +107,76 @@ export function HeroSection() {
 
                 {/* CTA Buttons */}
                 <div
-                  className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 ${
+                  className={`flex flex-col gap-4 transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: '1000ms' }}
                 >
-                  <Link href="/book-consultation" className="w-full sm:w-auto">
-                    <Button
-                      size="lg"
-                      className="w-full bg-gradient-to-r from-primary to-cyan-500 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all"
-                    >
-                      预约业务咨询
-                    </Button>
-                  </Link>
-                  <Link href="/solutions" className="w-full sm:w-auto">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full bg-transparent hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-105 transition-all"
-                    >
-                      探索解决方案
-                    </Button>
-                  </Link>
+                  {/* Community Version Install Card */}
+                  <div className="bg-background/90 backdrop-blur-sm rounded-xl p-5 border border-border shadow-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl">💻</span>
+                      <div>
+                        <h3 className="font-semibold text-foreground">开源社区版</h3>
+                        <p className="text-sm text-muted-foreground">
+                          一键安装 YongXian AI 助手,在终端(Shell)执行下面的命令：
+                        </p>
+                      </div>
+                    </div>
+                    <div className="relative group">
+                      <pre className="bg-slate-900 text-slate-100 rounded-lg p-3 text-sm overflow-x-auto font-mono">
+                        <code>
+                          curl -fsSL
+                          https://raw.githubusercontent.com/insight68/yongxian/main/install.sh |
+                          bash
+                        </code>
+                      </pre>
+                      <button
+                        onClick={() =>
+                          navigator.clipboard.writeText(
+                            'curl -fsSL https://raw.githubusercontent.com/insight68/yongxian/main/install.sh | bash'
+                          )
+                        }
+                        className="absolute top-2 right-2 p-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors opacity-0 group-hover:opacity-100"
+                        title="复制命令"
+                      >
+                        <svg
+                          className="w-4 h-4 text-slate-200"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/book-consultation" className="w-full sm:w-auto">
+                      <Button
+                        size="lg"
+                        className="w-full bg-gradient-to-r from-primary to-cyan-500 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all"
+                      >
+                        预约业务咨询
+                      </Button>
+                    </Link>
+                    <Link href="/solutions" className="w-full sm:w-auto">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full bg-transparent hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-105 transition-all"
+                      >
+                        探索解决方案
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
