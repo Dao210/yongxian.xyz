@@ -2,16 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-
-// 统计数据
-const stats = [
-  { value: '50+', label: '服务企业' },
-  { value: '30+', label: '成功案例' },
-  { value: '98%', label: '客户满意度' },
-  { value: '24/7', label: '专家支持' },
-];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,9 +32,12 @@ export function HeroSection() {
     >
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        {/* Gradient orbs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[200px] animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[200px] animate-pulse-slow delay-1000" />
+        {/* Enhanced gradient orbs */}
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[200px] animate-pulse-slow" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[200px] animate-pulse-slow delay-1000" />
+        <div className="absolute bottom-0 left-0 w-[650px] h-[650px] bg-purple-500/10 rounded-full blur-[200px] animate-pulse-slow delay-2000" />
+        <div className="absolute bottom-0 right-0 w-[750px] h-[750px] bg-blue-500/10 rounded-full blur-[200px] animate-pulse-slow delay-3000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-500/5 rounded-full blur-[250px] animate-pulse-slow delay-1500" />
 
         {/* Grid pattern */}
         <div
@@ -57,23 +51,49 @@ export function HeroSection() {
           }}
         />
 
-        {/* Floating particles - reduce for mobile */}
+        {/* Enhanced floating particles with animation */}
         <div className="particles">
-          <div className="particle hidden sm:block" style={{ left: '10%', top: '20%' }} />
-          <div className="particle hidden sm:block" style={{ left: '80%', top: '30%' }} />
-          <div className="particle hidden sm:block" style={{ left: '30%', top: '60%' }} />
-          {/* Additional particles for desktop only */}
-          <div className="particle hidden sm:block" style={{ left: '70%', top: '40%' }} />
-          <div className="particle hidden sm:block" style={{ left: '20%', top: '80%' }} />
+          <div
+            className="particle animate-float"
+            style={{ left: '10%', top: '20%', animationDelay: '0s' }}
+          />
+          <div
+            className="particle animate-float"
+            style={{ left: '85%', top: '25%', animationDelay: '1s' }}
+          />
+          <div
+            className="particle animate-float"
+            style={{ left: '25%', top: '65%', animationDelay: '2s' }}
+          />
+          <div
+            className="particle animate-float hidden sm:block"
+            style={{ left: '75%', top: '45%', animationDelay: '1.5s' }}
+          />
+          <div
+            className="particle animate-float hidden sm:block"
+            style={{ left: '15%', top: '80%', animationDelay: '0.5s' }}
+          />
+          <div
+            className="particle animate-float hidden sm:block"
+            style={{ left: '90%', top: '70%', animationDelay: '2.5s' }}
+          />
+          <div
+            className="particle animate-float hidden md:block"
+            style={{ left: '50%', top: '15%', animationDelay: '3s' }}
+          />
+          <div
+            className="particle animate-float hidden md:block"
+            style={{ left: '60%', top: '85%', animationDelay: '1.8s' }}
+          />
         </div>
       </div>
 
       {/* Content */}
       <div className="container relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-            {/* Left: Text Content */}
-            <div className="order-2 lg:order-1 flex-1">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col items-center">
+            {/* Text Content */}
+            <div className="w-full">
               <div
                 className={`flex flex-col gap-6 transition-all duration-1000 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-12'
@@ -82,7 +102,7 @@ export function HeroSection() {
               >
                 {/* Main headline */}
                 <h1
-                  className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 transition-all duration-1000 ${
+                  className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground text-center mb-8 transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: '600ms' }}
@@ -96,7 +116,7 @@ export function HeroSection() {
 
                 {/* Subtitle */}
                 <p
-                  className={`text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl transition-all duration-1000 ${
+                  className={`text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed text-center mx-auto mb-12 max-w-2xl transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: '800ms' }}
@@ -158,7 +178,7 @@ export function HeroSection() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link href="/book-consultation" className="w-full sm:w-auto">
                       <Button
                         size="lg"
@@ -180,49 +200,6 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-
-            {/* Right: Image + Stats */}
-            <div className="order-1 lg:order-2 flex-1">
-              <div
-                className={`relative transition-all duration-1000 ${
-                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                }`}
-                style={{ transitionDelay: '400ms' }}
-              >
-                {/* Hero Image */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8 lg:mb-0 aspect-[4/3]">
-                  <Image
-                    src="/images/hero-digital-employee.webp"
-                    alt="AI工作台"
-                    fill
-                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw"
-                    quality={85}
-                    priority
-                    className="object-cover"
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-cyan-500/20 to-transparent" />
-                </div>
-
-                {/* Stats Cards - Mobile: Stack below, Desktop: Absolute positioning */}
-                <div className="grid grid-cols-2 gap-4 lg:absolute lg:grid-cols-2 lg:gap-6 lg:-right-8 lg:bottom-12">
-                  {stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className={`bg-background/90 backdrop-blur-sm rounded-xl p-5 border border-border shadow-lg transition-all duration-500 hover:scale-105 hover:border-primary/30 ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                      }`}
-                      style={{ transitionDelay: `${1200 + index * 150}ms` }}
-                    >
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                        {stat.value}
-                      </div>
-                      <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -239,11 +216,38 @@ export function HeroSection() {
             transform: scale(1.05);
           }
         }
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px) translateX(0px);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          50% {
+            transform: translateY(-10px) translateX(-10px);
+          }
+          75% {
+            transform: translateY(-30px) translateX(5px);
+          }
+        }
         .animate-pulse-slow {
           animation: pulse-slow 4s ease-in-out infinite;
         }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
         .delay-1000 {
           animation-delay: 1s;
+        }
+        .delay-1500 {
+          animation-delay: 1.5s;
+        }
+        .delay-2000 {
+          animation-delay: 2s;
+        }
+        .delay-3000 {
+          animation-delay: 3s;
         }
       `}</style>
     </section>
