@@ -356,6 +356,28 @@ install_from_source() {
 
     log_info "源码构建完成"
     log_info "源码保留在: $BUILD_DIR"
+    echo ""
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${GREEN}           构建成功！正在打开浏览器...${NC}"
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+    echo -e "  ${WHITE}http://127.0.0.1:18789${NC}"
+    echo ""
+
+    # 自动打开浏览器
+    case "$OS" in
+        macos)
+            open http://127.0.0.1:18789
+            ;;
+        linux*)
+            if command -v xdg-open &> /dev/null; then
+                xdg-open http://127.0.0.1:18789 &> /dev/null &
+            fi
+            ;;
+        windows)
+            start http://127.0.0.1:18789
+            ;;
+    esac
 }
 
 install_openclaw() {
