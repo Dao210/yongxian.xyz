@@ -145,7 +145,9 @@ export function HeroSection() {
                 >
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-cyan-500/10 border border-primary/20 backdrop-blur-sm">
                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    <span className="text-sm font-medium text-foreground">基于 OpenClaw 开发</span>
+                    <span className="text-sm font-medium text-foreground">
+                      基于 OpenClaw 深度开发定制
+                    </span>
                   </div>
                 </div>
 
