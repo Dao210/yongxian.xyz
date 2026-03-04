@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
@@ -28,7 +29,7 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-muted/30"
+      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-muted/30 pt-16"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0">
@@ -102,7 +103,7 @@ export function HeroSection() {
               >
                 {/* Main headline */}
                 <h1
-                  className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground text-center mb-8 transition-all duration-1000 ${
+                  className={`font-['ZCOOL_XiaoWei'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground text-center mb-0 transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: '600ms' }}
@@ -114,6 +115,40 @@ export function HeroSection() {
                   </span>
                 </h1>
 
+                {/* Yongxian Image */}
+                <div className="flex justify-center mt-0 mb-8">
+                  <div
+                    className={`relative transition-all duration-1000 ${
+                      isVisible
+                        ? 'opacity-100 translate-y-0 scale-100'
+                        : 'opacity-0 translate-y-8 scale-95'
+                    }`}
+                    style={{ transitionDelay: '700ms' }}
+                  >
+                    <Image
+                      src="/yongxian.webp"
+                      alt="涌现 AI - 专属 AI 工作台"
+                      width={1000}
+                      height={1000}
+                      className="rounded-2xl shadow-2xl shadow-primary/20 animate-float-gentle max-w-full h-auto"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* OpenClaw Badge */}
+                <div
+                  className={`flex justify-center my-4 transition-all duration-1000 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: '900ms' }}
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-cyan-500/10 border border-primary/20 backdrop-blur-sm">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span className="text-sm font-medium text-foreground">基于 OpenClaw 开发</span>
+                  </div>
+                </div>
+
                 {/* Subtitle */}
                 <p
                   className={`text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed text-center mx-auto mb-12 max-w-2xl transition-all duration-1000 ${
@@ -121,8 +156,10 @@ export function HeroSection() {
                   }`}
                   style={{ transitionDelay: '800ms' }}
                 >
-                  让<span className="text-primary font-semibold">AI</span>{' '}
-                  为您的业务创造真实价值。专业顾问全程支持，确保从需求到落地的每一步都精准高效。
+                  <span className="text-primary font-semibold">AI</span>
+                  赋能各业务板块，提升运营效率、优化管理流程，推动企业转型为以
+                  <span className="text-primary font-semibold">AI</span>
+                  驱动为主的新一代智能企业。
                 </p>
 
                 {/* CTA Buttons */}
@@ -231,11 +268,23 @@ export function HeroSection() {
             transform: translateY(-30px) translateX(5px);
           }
         }
+        @keyframes float-gentle {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
         .animate-pulse-slow {
           animation: pulse-slow 4s ease-in-out infinite;
         }
         .animate-float {
           animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-gentle {
+          animation: float-gentle 4s ease-in-out infinite;
         }
         .delay-1000 {
           animation-delay: 1s;
