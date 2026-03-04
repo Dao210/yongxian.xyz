@@ -88,3 +88,91 @@
 .container {
   @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
 }
+
+/* === 移动端触摸优化 === */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* === 粒子效果 === */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  opacity: 0.6;
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+/* === 深色模式光晕动画 === */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.dark .animate-pulse-slow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* === 页面加载动画 === */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* === 减少动画 === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === 移动端特定样式 === */
+@media (max-width: 768px) {
+  /* 更大的触摸区域 */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+  }
+
+  /* 文字平滑渲染 */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 移动端圆角优化 */
+  .rounded-responsive {
+    border-radius: var(--radius);
+  }
+}

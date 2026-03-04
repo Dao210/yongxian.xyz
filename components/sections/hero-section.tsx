@@ -29,16 +29,14 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-muted/30 pt-16"
+      className="relative min-h-[85vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-card pt-16 pb-8 sm:pb-0"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        {/* Enhanced gradient orbs */}
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[200px] animate-pulse-slow" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[200px] animate-pulse-slow delay-1000" />
-        <div className="absolute bottom-0 left-0 w-[650px] h-[650px] bg-purple-500/10 rounded-full blur-[200px] animate-pulse-slow delay-2000" />
-        <div className="absolute bottom-0 right-0 w-[750px] h-[750px] bg-blue-500/10 rounded-full blur-[200px] animate-pulse-slow delay-3000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-500/5 rounded-full blur-[250px] animate-pulse-slow delay-1500" />
+        {/* 深色模式优化后的光晕 */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-primary-glow rounded-full blur-[150px] sm:blur-[200px] animate-pulse-slow" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] bg-primary-glow rounded-full blur-[150px] sm:blur-[200px] animate-pulse-slow delay-2000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] bg-glow-soft rounded-full blur-[120px] sm:blur-[180px] animate-pulse-slow delay-1000" />
 
         {/* Grid pattern */}
         <div
@@ -143,7 +141,7 @@ export function HeroSection() {
                   }`}
                   style={{ transitionDelay: '900ms' }}
                 >
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-cyan-500/10 border border-primary/20 backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border backdrop-blur-sm shadow-lg">
                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                     <span className="text-sm font-medium text-foreground">
                       基于 OpenClaw 深度开发定制
@@ -172,7 +170,7 @@ export function HeroSection() {
                   style={{ transitionDelay: '1000ms' }}
                 >
                   {/* Community Version Install Card */}
-                  <div className="bg-background/90 backdrop-blur-sm rounded-xl p-5 border border-border shadow-lg">
+                  <div className="bg-card/90 backdrop-blur-sm rounded-2xl p-5 border border-border shadow-lg">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-2xl">💻</span>
                       <div>
@@ -183,7 +181,7 @@ export function HeroSection() {
                       </div>
                     </div>
                     <div className="relative group">
-                      <pre className="bg-slate-900 text-slate-100 rounded-lg p-3 text-sm overflow-x-auto font-mono">
+                      <pre className="bg-slate-950 dark:bg-slate-900/50 text-slate-100 dark:text-slate-200 rounded-lg p-3 text-sm overflow-x-auto font-mono border border-border">
                         <code>
                           curl -fsSL
                           https://raw.githubusercontent.com/Dao210/yongxian.xyz/main/yongxianInstaller/install.sh
@@ -196,7 +194,7 @@ export function HeroSection() {
                             'curl -fsSL https://raw.githubusercontent.com/Dao210/yongxian.xyz/main/yongxianInstaller/install.sh | bash'
                           )
                         }
-                        className="absolute top-2 right-2 p-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors opacity-0 group-hover:opacity-100"
+                        className="absolute top-2 right-2 p-2 bg-slate-700 hover:bg-slate-600 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-md transition-colors opacity-0 group-hover:opacity-100"
                         title="复制命令"
                       >
                         <svg
@@ -221,7 +219,7 @@ export function HeroSection() {
                     <Link href="/book-consultation" className="w-full sm:w-auto">
                       <Button
                         size="lg"
-                        className="w-full bg-gradient-to-r from-primary to-cyan-500 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all"
+                        className="w-full bg-gradient-to-r from-primary to-cyan-500 text-white font-semibold rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                       >
                         预约业务咨询
                       </Button>
@@ -230,7 +228,7 @@ export function HeroSection() {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="w-full bg-transparent hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-105 transition-all"
+                        className="w-full bg-card hover:bg-primary/5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all"
                       >
                         探索解决方案
                       </Button>
