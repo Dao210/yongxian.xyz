@@ -7,7 +7,9 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border-subtle bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+      {/* 微妙的底部渐变线 */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/30 to-transparent" />
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-8">
           <Link href="/" className="flex items-center gap-2">
