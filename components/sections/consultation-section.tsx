@@ -120,7 +120,7 @@ export function ConsultationSection() {
                 谢谢您！
               </h3>
               <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-                我们已收到您的咨询请求。请添加我们的客服微信，完成¥299支付后，我们将在24小时内联系您安排咨询时间。
+                我们已收到您的咨询请求。请添加我们的客服微信，我们将在24小时内联系您安排咨询时间。
               </p>
               <div className="flex justify-center mb-8">
                 <div className="relative h-56 w-56 overflow-hidden rounded-2xl border border-border shadow-lg">
@@ -179,20 +179,9 @@ export function ConsultationSection() {
                         3
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">支付咨询费用</p>
-                        <p className="text-sm text-muted-foreground">
-                          支付¥299获得30分钟专业业务咨询
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-cyan-500 text-white font-medium text-sm shadow-sm">
-                        4
-                      </div>
-                      <div>
                         <p className="font-medium text-foreground">安排咨询时间</p>
                         <p className="text-sm text-muted-foreground">
-                          我们将与您确认具体的咨询时间
+                          我们将与您确认具体的咨询时间，提供30分钟专业业务咨询
                         </p>
                       </div>
                     </li>
@@ -274,7 +263,7 @@ export function ConsultationSection() {
                       {isSubmitting ? '提交中...' : '提交咨询需求'}
                     </Button>
                     <p className="text-center text-sm text-muted-foreground">
-                      提交后，您将收到添加微信和支付指引
+                      提交后，您将收到添加微信的指引
                     </p>
                   </div>
                 </form>
