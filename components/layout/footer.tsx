@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Logo } from '@/components/ui/logo';
 
 export default function Footer() {
@@ -71,6 +72,28 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+            <div className="mt-6 flex gap-4">
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/20260315-081638.png"
+                  alt="小红书二维码"
+                  width={100}
+                  height={100}
+                  className="rounded"
+                />
+                <span className="mt-2 text-xs text-muted-foreground">小红书</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/qrcode_for_gh_1b20a9c960a6_258.jpg"
+                  alt="公众号二维码"
+                  width={100}
+                  height={100}
+                  className="rounded"
+                />
+                <span className="mt-2 text-xs text-muted-foreground">公众号</span>
+              </div>
+            </div>
           </div>
 
           <div>
