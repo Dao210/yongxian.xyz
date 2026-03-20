@@ -106,10 +106,10 @@ export function HeroSection() {
                   }`}
                   style={{ transitionDelay: '600ms' }}
                 >
-                  为渴求成长的企业定制
+                  构建你的智能组织
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-purple-500">
-                    专属 AI 工作台
+                    让 AI 为你工作
                   </span>
                 </h1>
 
@@ -156,10 +156,8 @@ export function HeroSection() {
                   }`}
                   style={{ transitionDelay: '800ms' }}
                 >
-                  <span className="text-primary font-semibold">AI</span>
-                  赋能各业务板块，提升运营效率、优化管理流程，推动企业转型为以
-                  <span className="text-primary font-semibold">AI</span>
-                  驱动为主的新一代智能企业。
+                  <span className="text-primary font-semibold">AI数字员工</span>
+                  各司其职，协同工作，就像一支永不疲倦的专业团队。组建你的AI团队，让组织自动运转。
                 </p>
 
                 {/* CTA Buttons */}

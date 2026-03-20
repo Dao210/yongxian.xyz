@@ -158,7 +158,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
+      <body className="min-h-screen bg-background font-serif antialiased">
         <Providers>
           <div className="relative flex min-h-screen flex-col">
             <Header />
